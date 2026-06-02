@@ -1,0 +1,9 @@
+# Vercel
+.vercel
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Dependencias (caso adicione build no futuro)
+node_modules/
