@@ -177,7 +177,7 @@
           "name": "Quais formas de pagamento são aceitas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "PIX com 15% de desconto, cartão de crédito em até 6x sem juros e boleto bancário. Fechamento pelo WhatsApp com atendimento comercial."
+            "text": "PIX com desconto, cartão de crédito em até 6x sem juros e boleto bancário. Fechamento pelo WhatsApp com atendimento comercial."
           }
         }
       ]
@@ -1396,6 +1396,128 @@
   @media (max-width: 860px) {
     .bota-feat__grid { grid-template-columns: 1fr; gap: 16px; max-width: 440px; margin-inline: auto; }
   }
+
+  /* ===== TRUST BAR ===== */
+  .trustbar { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .trustbar__grid { display: grid; grid-template-columns: repeat(5, 1fr); }
+  .trustbar__item { padding: 22px 18px; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+  .trustbar__item:last-child { border-right: none; }
+  .trustbar__k { font-family: var(--f-mono); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
+  .trustbar__v { font-family: var(--f-display); font-size: 15px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink); }
+  @media (max-width: 980px) {
+    .trustbar__grid { grid-template-columns: 1fr 1fr; }
+    .trustbar__item { border-bottom: 1px solid var(--border); }
+    .trustbar__item:nth-child(2n) { border-right: none; }
+    .trustbar__item:last-child { grid-column: 1 / -1; border-bottom: none; }
+  }
+
+  /* ===== CHECKOUT NO SITE ===== */
+  .product__ship { font-family: var(--f-mono); font-size: 11px; letter-spacing: 1px; color: var(--ink-low); margin: -4px 0 14px; }
+  .product__cta--buy { background: var(--green-pale); color: var(--bg); border-color: var(--green-pale); margin-bottom: 10px; }
+  .product__cta--buy:hover { background: #e9efe3; color: var(--bg); }
+  .product__cta--buy + .product__cta { margin-top: 0; }
+  .product__cta[hidden] { display: none; }
+
+  /* ===== REVENDA ===== */
+  .revenda__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: start; }
+  .revenda__perks { list-style: none; display: grid; gap: 0; margin-top: 36px; border-top: 1px solid var(--border); }
+  .revenda__perks li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--border); color: var(--ink-mid); line-height: 1.55; }
+  .revenda__perks b { display: block; color: var(--ink); font-family: var(--f-display); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 15px; margin-bottom: 2px; }
+  .revenda__n { font-family: var(--f-mono); font-size: 12px; color: var(--gold); padding-top: 3px; }
+  .revenda__form { background: var(--card); border: 1px solid var(--border-strong); padding: 36px; display: grid; gap: 16px; }
+  .revenda__form h3 { font-family: var(--f-display); text-transform: uppercase; letter-spacing: 1px; font-size: 24px; }
+  .revenda__form p.revenda__min { font-family: var(--f-mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+  .revenda__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .revenda__form label { display: grid; gap: 6px; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-low); }
+  .revenda__form input, .revenda__form select { background: var(--bg); border: 1px solid var(--border-strong); color: var(--ink); padding: 13px 14px; font: 15px var(--f-body); letter-spacing: 0; text-transform: none; border-radius: 0; width: 100%; }
+  .revenda__form input:focus, .revenda__form select:focus { outline: 2px solid var(--green); outline-offset: 1px; }
+  .revenda__form .btn { justify-content: center; width: 100%; margin-top: 6px; }
+  .revenda__note { font-size: 12.5px; color: var(--ink-low); line-height: 1.5; }
+  @media (max-width: 980px) {
+    .revenda__grid { grid-template-columns: 1fr; gap: 44px; }
+  }
+  @media (max-width: 560px) {
+    .revenda__row { grid-template-columns: 1fr; }
+    .revenda__form { padding: 24px 20px; }
+  }
+
+  /* ===== AJUSTES DE ESTÉTICA (v2) ===== */
+  /* Animações mais leves; no celular, sem animação */
+  .reveal { transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  @media (max-width: 980px), (prefers-reduced-motion: reduce) {
+    .reveal, .reveal.is-visible { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* Oferta no topo */
+  .hero__offer { display: grid; gap: 4px; margin: 6px 0 30px; padding: 16px 18px; border-left: 3px solid var(--gold); background: rgba(0,0,0,0.28); max-width: 420px; }
+  .hero__offer-name { font-family: var(--f-mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-mid); }
+  .hero__offer-price { font-family: var(--f-display); font-size: 20px; text-transform: uppercase; letter-spacing: 1px; color: var(--ink); }
+  .hero__offer-price strong { font-size: 34px; font-weight: 700; margin-right: 4px; }
+  .hero__offer-alt { font-size: 13px; color: var(--ink-low); }
+
+  /* Fotos dos produtos sem escurecer */
+  .product__media { background: #111; }
+  .product__media::after { display: none; }
+
+  /* Tag "Mais vendido" legível */
+  .product__tag--hot { background: var(--warning); color: #fff; border-color: var(--warning); font-weight: 600; }
+
+  /* Rótulos de seção mais legíveis */
+  .section__num { color: var(--ink-mid); }
+
+  /* Guia de tamanhos */
+  .size-guide-link { align-self: flex-start; background: none; border: none; padding: 0; margin: 0 0 10px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+  .sg { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 16px; }
+  .sg[hidden] { display: none; }
+  .sg__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.72); }
+  .sg__box { position: relative; background: var(--card); border: 1px solid var(--border-strong); padding: 32px 28px 28px; width: 100%; max-width: 520px; max-height: 88vh; overflow: auto; }
+  .sg__close { position: absolute; top: 10px; right: 14px; background: none; border: none; color: var(--ink); font-size: 30px; line-height: 1; cursor: pointer; }
+  .sg__title { font-family: var(--f-display); text-transform: uppercase; font-size: 22px; letter-spacing: 1px; margin: -10px 0 18px; }
+  .sg__body { color: var(--ink-mid); font-size: 14.5px; line-height: 1.6; margin-bottom: 20px; }
+  .sg__body table { width: 100%; border-collapse: collapse; font-family: var(--f-mono); font-size: 13px; margin-top: 6px; }
+  .sg__body th, .sg__body td { padding: 10px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+  .sg__body th { color: var(--gold); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; font-size: 11px; }
+  .sg__body td { color: var(--ink); }
+  .sg__wa { width: 100%; justify-content: center; }
+
+  /* ---- Celular / tablet ---- */
+  @media (max-width: 1100px) {
+    .hero, .hero__grid { min-height: 0; }
+    .hero__grid { display: flex; flex-direction: column; }
+    .hero__content { min-height: 0; padding-top: 48px; padding-bottom: 32px; order: 1; }
+    .hero__media { position: relative; inset: auto; order: 2; opacity: 1; height: min(78vw, 480px); }
+    .hero__media img { object-position: center 20%; }
+    .hero__media::before { background: linear-gradient(180deg, var(--bg) 0%, transparent 22%, transparent 75%, var(--bg) 100%); }
+  }
+  @media (max-width: 560px) {
+    .hero__title { font-size: 46px; }
+    .hero__sub { font-size: 15.5px; }
+    .hero__actions .btn { flex: 1 1 100%; justify-content: center; }
+
+    /* Loja em 2 colunas, cards compactos */
+    .shop__head { margin-bottom: 32px; }
+    .shop__grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .product:hover { transform: none; }
+    .product__body { padding: 14px 12px 14px; }
+    .product__cat, .product__specs, .product__code, .product__price-old { display: none; }
+    .product__name { font-size: 15px; margin-bottom: 8px; }
+    .product__price-row { padding-top: 10px; margin-bottom: 4px; gap: 8px; }
+    .product__price { font-size: 21px; }
+    .product__price-pix { font-size: 10px; letter-spacing: 0.5px; margin-bottom: 10px; }
+    .product__ship { font-size: 9.5px; letter-spacing: 0; margin: 0 0 10px; }
+    .size-guide-link { font-size: 10px; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .product__sizes { gap: 4px; margin-bottom: 12px; }
+    .size-btn { min-width: 0; flex: 1 1 calc(33.33% - 4px); padding: 8px 0; font-size: 10.5px; letter-spacing: 0.5px; }
+    .product__cta { padding: 11px 6px; font-size: 10.5px; letter-spacing: 1px; gap: 6px; }
+    .product__cta svg { width: 13px; height: 13px; }
+    .product__tag { top: 8px; left: 8px; font-size: 8.5px; letter-spacing: 1px; padding: 5px 7px; }
+    .section__num { font-size: 11.5px; letter-spacing: 3px; }
+
+    /* Botão do WhatsApp menor e no canto */
+    .wa-float { width: 50px; height: 50px; bottom: 16px; right: 16px; }
+    .wa-float svg { width: 25px; height: 25px; }
+    .wa-float::after { animation: none; opacity: 0; }
+  }
 </style>
 </head>
 <body>
@@ -1416,6 +1538,7 @@
       <li><a href="#anatomia" class="nav__link">Anatomia</a></li>
       <li><a href="#homologacao" class="nav__link">Homologação</a></li>
       <li><a href="#sobre" class="nav__link">Sobre</a></li>
+      <li><a href="#revenda" class="nav__link">Revenda</a></li>
       <li><a href="#faq" class="nav__link">FAQ</a></li>
     </ul>
 
@@ -1445,9 +1568,15 @@
         Indústria homologada CEDRO®. Gandola, calça e conjuntos camuflados padrão Exército Brasileiro — conforme RUE e Portaria C&nbsp;Ex nº 1.596/21.
       </p>
 
+      <div class="hero__offer">
+        <span class="hero__offer-name">Conjunto Camuflado EB · Gandola + Calça</span>
+        <span class="hero__offer-price"><strong>R$ 310</strong> no PIX</span>
+        <span class="hero__offer-alt">ou R$ 340 em até 6x sem juros</span>
+      </div>
+
       <div class="hero__actions">
         <a href="#loja" class="btn btn--primary">
-          <span>Entrar na loja</span>
+          <span>Comprar o conjunto</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <a href="#" class="btn btn--ghost" id="wa-cta-hero">
@@ -1465,17 +1594,14 @@
   </div>
 </section>
 
-<!-- ===== MANIFESTO ===== -->
-<section class="manifesto">
-  <div class="container reveal">
-    <div class="section__num">M / 01 — MANIFESTO</div>
-    <div class="manifesto__quote">
-      <span><em>A qualidade que</em></span>
-      <span><em>equipa as Forças Armadas.</em></span>
-    </div>
-    <div class="manifesto__sig">
-      Claupa Militar · Para todo o Brasil
-    </div>
+<!-- ===== TRUST BAR ===== -->
+<section class="trustbar" aria-label="Garantias">
+  <div class="container trustbar__grid">
+    <div class="trustbar__item"><span class="trustbar__k">Fábrica</span><span class="trustbar__v">Londrina · PR</span></div>
+    <div class="trustbar__item"><span class="trustbar__k">CNPJ</span><span class="trustbar__v">64.732.310/0001-83</span></div>
+    <div class="trustbar__item"><span class="trustbar__k">Pagamento</span><span class="trustbar__v">PIX · Cartão 6x · Boleto</span></div>
+    <div class="trustbar__item"><span class="trustbar__k">Envio</span><span class="trustbar__v">Despacho em até 48h</span></div>
+    <div class="trustbar__item"><span class="trustbar__k">Garantia</span><span class="trustbar__v">Troca 7 dias · 90 dias defeito</span></div>
   </div>
 </section>
 
@@ -1491,7 +1617,7 @@
         </h2>
       </div>
       <p class="section__lead">
-        Linha completa de fardamento militar com tecido Alta Solidez CEDRO® — para todo o Brasil. Seleciona o tamanho, fecha o pedido pelo WhatsApp e a peça chega na sua casa em até 12 dias úteis.
+        Linha completa de fardamento militar com tecido Alta Solidez CEDRO® — para todo o Brasil. Escolha o tamanho, finalize o pedido e a peça sai da fábrica em até 48h — chega na sua casa em até 12 dias úteis.
       </p>
     </div>
 
@@ -1512,14 +1638,20 @@
             <span class="product__price">R$ 340,00</span>
             <span class="product__price-old">R$ 399,00</span>
           </div>
-          <div class="product__price-pix">PIX <strong>R$ 330,00</strong></div>
+          <div class="product__price-pix">PIX <strong>R$ 310,00</strong></div>
+          <button class="size-guide-link" type="button" data-size-guide>Guia de tamanhos</button>
           <div class="product__sizes" data-sizes>
-            <button class="size-btn" type="button">PP</button>
             <button class="size-btn" type="button">P</button>
             <button class="size-btn" type="button">M</button>
             <button class="size-btn" type="button">G</button>
             <button class="size-btn" type="button">GG</button>
+            <button class="size-btn" type="button">XG</button>
           </div>
+          <div class="product__ship" data-ship></div>
+          <button class="product__cta product__cta--buy" type="button" data-checkout hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Comprar no site · pagamento seguro
+          </button>
           <button class="product__cta" type="button" data-buy>
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             Comprar pelo WhatsApp
@@ -1543,13 +1675,19 @@
             <span class="product__price-old">R$ 289,00</span>
           </div>
           <div class="product__price-pix">PIX <strong>R$ 212,41</strong></div>
+          <button class="size-guide-link" type="button" data-size-guide>Guia de tamanhos</button>
           <div class="product__sizes" data-sizes>
-            <button class="size-btn" type="button">PP</button>
             <button class="size-btn" type="button">P</button>
             <button class="size-btn" type="button">M</button>
             <button class="size-btn" type="button">G</button>
             <button class="size-btn" type="button">GG</button>
+            <button class="size-btn" type="button">XG</button>
           </div>
+          <div class="product__ship" data-ship></div>
+          <button class="product__cta product__cta--buy" type="button" data-checkout hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Comprar no site · pagamento seguro
+          </button>
           <button class="product__cta" type="button" data-buy>
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             Comprar pelo WhatsApp
@@ -1573,13 +1711,19 @@
             <span class="product__price-old">R$ 259,00</span>
           </div>
           <div class="product__price-pix">PIX <strong>R$ 186,91</strong></div>
+          <button class="size-guide-link" type="button" data-size-guide>Guia de tamanhos</button>
           <div class="product__sizes" data-sizes>
-            <button class="size-btn" type="button">PP</button>
             <button class="size-btn" type="button">P</button>
             <button class="size-btn" type="button">M</button>
             <button class="size-btn" type="button">G</button>
             <button class="size-btn" type="button">GG</button>
+            <button class="size-btn" type="button">XG</button>
           </div>
+          <div class="product__ship" data-ship></div>
+          <button class="product__cta product__cta--buy" type="button" data-checkout hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Comprar no site · pagamento seguro
+          </button>
           <button class="product__cta" type="button" data-buy>
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             Comprar pelo WhatsApp
@@ -1602,6 +1746,7 @@
             <span class="product__price">R$ 479,90</span>
           </div>
           <div class="product__price-pix">PIX <strong>R$ 407,91</strong></div>
+          <button class="size-guide-link" type="button" data-size-guide>Guia de tamanhos</button>
           <div class="product__sizes" data-sizes>
             <button class="size-btn" type="button">37</button>
             <button class="size-btn" type="button">38</button>
@@ -1612,6 +1757,11 @@
             <button class="size-btn" type="button">43</button>
             <button class="size-btn" type="button">44</button>
           </div>
+          <div class="product__ship" data-ship></div>
+          <button class="product__cta product__cta--buy" type="button" data-checkout hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Comprar no site · pagamento seguro
+          </button>
           <button class="product__cta" type="button" data-buy>
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             Comprar pelo WhatsApp
@@ -1640,13 +1790,19 @@
             <span class="product__price">Sob consulta</span>
           </div>
           <div class="product__price-pix">Valor e PIX <strong>pelo WhatsApp</strong></div>
+          <button class="size-guide-link" type="button" data-size-guide>Guia de tamanhos</button>
           <div class="product__sizes" data-sizes>
-            <button class="size-btn" type="button">PP</button>
             <button class="size-btn" type="button">P</button>
             <button class="size-btn" type="button">M</button>
             <button class="size-btn" type="button">G</button>
             <button class="size-btn" type="button">GG</button>
+            <button class="size-btn" type="button">XG</button>
           </div>
+          <div class="product__ship" data-ship></div>
+          <button class="product__cta product__cta--buy" type="button" data-checkout hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Comprar no site · pagamento seguro
+          </button>
           <button class="product__cta" type="button" data-buy>
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             Comprar pelo WhatsApp
@@ -1804,7 +1960,7 @@
         </div>
         <div class="specsheet__row">
           <span class="specsheet__row-key">Tamanhos</span>
-          <span class="specsheet__row-val">PP · P · M · G · GG</span>
+          <span class="specsheet__row-val">P · M · G · GG · XG</span>
         </div>
         <div class="specsheet__row">
           <span class="specsheet__row-key">Lavagem</span>
@@ -1864,6 +2020,62 @@
   </div>
 </section>
 
+<!-- ===== REVENDA ===== -->
+<section class="section section--surface" id="revenda">
+  <div class="container revenda__grid">
+    <div class="reveal">
+      <div class="section__num">R / 06 — REVENDA</div>
+      <h2 class="section__title">
+        Revenda Claupa.<br>
+        <em>Preço de fábrica.</em>
+      </h2>
+      <p class="section__lead">
+        Loja de artigos militares, clube de tiro, curso preparatório ou compra para a turma: atendemos pedidos em quantidade com tabela de atacado direto da fábrica.
+      </p>
+      <ul class="revenda__perks">
+        <li><span class="revenda__n">01</span><div><b>Tabela por quantidade</b>Quanto maior o pedido, melhor o preço por peça.</div></li>
+        <li><span class="revenda__n">02</span><div><b>Estoque pronto</b>Grade P ao XG disponível, sem esperar produção.</div></li>
+        <li><span class="revenda__n">03</span><div><b>Despacho em 48h</b>Saindo de Londrina/PR para todo o Brasil.</div></li>
+        <li><span class="revenda__n">04</span><div><b>Material para vender</b>Fotos e ficha técnica dos produtos para sua loja e redes.</div></li>
+        <li><span class="revenda__n">05</span><div><b>Atendimento dedicado</b>Um contato comercial direto para o seu pedido.</div></li>
+      </ul>
+    </div>
+
+    <form class="revenda__form reveal" id="revenda-form" novalidate>
+      <h3>Quero ser revendedor</h3>
+      <p class="revenda__min" data-min-text></p>
+      <div class="revenda__row">
+        <label>Seu nome<input name="nome" required autocomplete="name"></label>
+        <label>Cidade / UF<input name="cidade" required placeholder="Ex: Curitiba/PR"></label>
+      </div>
+      <label>Loja, clube ou turma<input name="empresa" placeholder="Nome da loja, clube, curso ou unidade"></label>
+      <div class="revenda__row">
+        <label>Tipo
+          <select name="tipo">
+            <option>Loja militar / tática</option>
+            <option>Clube de tiro / CAC</option>
+            <option>Curso preparatório</option>
+            <option>Compra para turma / pelotão</option>
+            <option>Revenda autônoma</option>
+            <option>Outro</option>
+          </select>
+        </label>
+        <label>Quantidade estimada
+          <select name="qtd">
+            <option>10 a 20 peças</option>
+            <option>21 a 50 peças</option>
+            <option>51 a 100 peças</option>
+            <option>Mais de 100 peças</option>
+          </select>
+        </label>
+      </div>
+      <label>CNPJ (opcional)<input name="cnpj" inputmode="numeric" placeholder="00.000.000/0000-00"></label>
+      <button class="btn btn--wa" type="submit"><span>Receber tabela de atacado</span></button>
+      <p class="revenda__note">Você será levado ao WhatsApp comercial com seus dados preenchidos. A tabela é enviada por lá.</p>
+    </form>
+  </div>
+</section>
+
 <!-- ===== FAQ ===== -->
 <section class="faq" id="faq">
   <div class="container">
@@ -1902,7 +2114,7 @@
           <svg class="faq__q-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </button>
         <div class="faq__a"><div class="faq__a-inner">
-          PIX (com 15% de desconto), cartão de crédito em até 6x sem juros e boleto bancário. O acordo é fechado direto pelo WhatsApp com nosso atendimento comercial.
+          PIX (com desconto — o valor no PIX aparece em cada produto), cartão de crédito em até 6x sem juros e boleto bancário. O acordo é fechado direto pelo WhatsApp com nosso atendimento comercial.
         </div></div>
       </div>
 
@@ -1928,11 +2140,11 @@
 
       <div class="faq__item">
         <button class="faq__q" type="button">
-          <span>Por que comprar direto da fábrica e não em revenda?</span>
+          <span>Por que comprar direto da fábrica?</span>
           <svg class="faq__q-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </button>
         <div class="faq__a"><div class="faq__a-inner">
-          Preço de fábrica (sem markup de revendedor), atendimento direto com quem produz (resolve troca, dúvida e ajuste mais rápido), garantia rastreável (você fala com o fabricante, não com intermediário), e PIX com 15% de desconto que revenda não consegue praticar.
+          Você fala com quem produz: dúvida de tamanho, troca e ajuste se resolvem mais rápido, e a garantia é rastreável direto com o fabricante. Tem loja ou quer revender? Veja a seção <a href="#revenda" style="color:var(--gold);text-decoration:underline">Revenda</a>.
         </div></div>
       </div>
 
@@ -1958,7 +2170,7 @@
       <em>te espera.</em>
     </h2>
     <p class="cta-final__sub">
-      Atendimento comercial pelo WhatsApp tira dúvida de tamanho, fecha o pedido, e despacha em até 48h. Sem fila. Sem login. Sem revendedor.
+      Atendimento comercial pelo WhatsApp tira dúvida de tamanho, fecha o pedido, e despacha em até 48h. Sem fila. Sem login. Direto com a fábrica.
     </p>
     <div class="cta-final__actions">
       <a href="#" class="btn btn--wa" id="wa-cta-final">
@@ -2024,15 +2236,54 @@
   </div>
 </footer>
 
+<!-- ===== GUIA DE TAMANHOS ===== -->
+<div class="sg" id="size-guide" hidden>
+  <div class="sg__backdrop" data-sg-close></div>
+  <div class="sg__box" role="dialog" aria-modal="true" aria-labelledby="sg-title">
+    <button class="sg__close" type="button" data-sg-close aria-label="Fechar">×</button>
+    <div class="section__num">GUIA DE TAMANHOS</div>
+    <h3 id="sg-title" class="sg__title"></h3>
+    <div class="sg__body"></div>
+    <a class="btn btn--wa sg__wa" href="#" target="_blank" rel="noopener"><span>Tirar dúvida de tamanho</span></a>
+  </div>
+</div>
+
 <a href="#" class="wa-float" id="wa-float" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
 <script>
+  /* ================= CONFIGURAÇÃO DE VENDAS =================
+     Links de pagamento (Mercado Pago, InfinitePay etc.).
+     Cole o link em cada produto. Pode ser um link por tamanho
+     (P, M, G, GG, XG / 37..44) ou um único em "default".
+     Enquanto estiver vazio, o botão "Comprar no site" não aparece
+     e o cliente compra pelo WhatsApp como hoje. */
+  const CHECKOUT_LINKS = {
+    'Conjunto Camuflado EB (Gandola + Calça)': { default: '' },
+    'Gandola Camuflada EB':                    { default: '' },
+    'Calça Camuflada EB':                      { default: '' },
+    'Bota Tática Protefort':                   { default: '' },
+    'Japona Camuflada EB':                     { default: '' },
+  };
+  const FRETE_TEXTO = 'Frete a partir de R$ 30 · calculado pelo CEP';
+  const REVENDA_MINIMO = 10; // pedido mínimo de revenda (peças)
+  /* ========================================================== */
+
+  // Origem do cliente (para saber de onde veio a venda: ?ref=insta, ?utm_source=google...)
+  let ORIGEM = '';
+  try {
+    const q = new URLSearchParams(location.search);
+    ORIGEM = q.get('ref') || q.get('utm_source') || '';
+    if (ORIGEM) sessionStorage.setItem('claupa_origem', ORIGEM);
+    else ORIGEM = sessionStorage.getItem('claupa_origem') || '';
+  } catch (e) {}
+  const origemTxt = () => ORIGEM ? `\n(Origem: ${ORIGEM})` : '';
+
   const WA_PHONE = '5543999780051'; // WhatsApp comercial Claupa Militar (43) 99978-0051
   const WA_BASE = 'Olá! Vim do site da Claupa Militar e quero comprar:';
 
-  const waGeneric = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent('Olá! Vim do site da Claupa Militar. Pode me passar mais informações?')}`;
+  const waGeneric = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent('Olá! Vim do site da Claupa Militar. Pode me passar mais informações?' + origemTxt())}`;
   ['wa-cta-nav','wa-cta-hero','wa-cta-final','wa-cta-footer','wa-float'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.setAttribute('href', waGeneric);
@@ -2053,7 +2304,7 @@
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   // Size selection per product
@@ -2084,11 +2335,98 @@
         return;
       }
 
-      const msg = `${WA_BASE}\n\n• Produto: ${productName}\n• Tamanho: ${size}\n• Preço: ${price}\n\nForma de pagamento preferida: PIX (15% off) / Cartão / Boleto.\nMeu CEP é: `;
+      const msg = `${WA_BASE}\n\n• Produto: ${productName}\n• Tamanho: ${size}\n• Preço: ${price}\n\nForma de pagamento preferida: PIX / Cartão / Boleto.${origemTxt()}\n\nMeu CEP é: `;
       const url = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank', 'noopener');
     });
   });
+
+  // Frete + botões de checkout no site
+  document.querySelectorAll('[data-ship]').forEach(el => { el.textContent = FRETE_TEXTO; });
+  document.querySelectorAll('[data-checkout]').forEach(btn => {
+    const card = btn.closest('.product');
+    const links = CHECKOUT_LINKS[card.getAttribute('data-product')] || {};
+    const hasLink = Object.values(links).some(v => v && v.trim());
+    if (!hasLink) return;
+    btn.hidden = false;
+    btn.addEventListener('click', () => {
+      const sizeEl = card.querySelector('.size-btn.active');
+      const size = sizeEl ? sizeEl.textContent.trim() : null;
+      if (!size) {
+        const sizes = card.querySelector('[data-sizes]');
+        sizes.style.outline = '2px solid #E04D2B';
+        sizes.style.outlineOffset = '4px';
+        sizes.scrollIntoView({behavior: 'smooth', block: 'center'});
+        setTimeout(() => { sizes.style.outline = 'none'; }, 1800);
+        return;
+      }
+      const url = (links[size] && links[size].trim()) || links.default;
+      if (url) window.open(url, '_blank', 'noopener');
+    });
+  });
+
+  // Formulário de revenda → WhatsApp
+  const minEl = document.querySelector('[data-min-text]');
+  if (minEl) minEl.textContent = `Pedido mínimo: ${REVENDA_MINIMO} peças`;
+  const rf = document.getElementById('revenda-form');
+  if (rf) rf.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const d = new FormData(rf);
+    const nome = (d.get('nome') || '').trim();
+    const cidade = (d.get('cidade') || '').trim();
+    if (!nome || !cidade) {
+      rf.querySelector(!nome ? '[name=nome]' : '[name=cidade]').focus();
+      return;
+    }
+    const msg = `[REVENDA] Olá! Quero receber a tabela de atacado da Claupa Militar.\n\n` +
+      `• Nome: ${nome}\n• Cidade/UF: ${cidade}\n` +
+      `• Loja/clube/turma: ${(d.get('empresa') || '-').toString().trim() || '-'}\n` +
+      `• Tipo: ${d.get('tipo')}\n• Quantidade: ${d.get('qtd')}\n` +
+      `• CNPJ: ${(d.get('cnpj') || '-').toString().trim() || '-'}` + origemTxt();
+    window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+  });
+
+  // Guia de tamanhos — preencha com as medidas reais da fábrica.
+  // Ex.: { cols: ['Tam.','Altura','Tórax','Cintura'], rows: [['P','1,60–1,70','90–96','76–82'], ...] }
+  const SG_GANDOLA = { title: 'Gandola', cols: ['Medida','P','M','G','GG','XG'], rows: [
+    ['Busto','56,4','58,2','61','64,8','68,6'],
+    ['Altura','74','76','78','80','82'],
+    ['Quadril','55','57','60','64','68'],
+    ['Manga','61,75','63,75','65','66,25','67,5'],
+  ]};
+  const SG_CALCA = { title: 'Calça', cols: ['Medida','P','M','G','GG','XG'], rows: [
+    ['Cintura','44','45,5','48,5','52,5','56,5'],
+    ['Quadril','56','58','62','64','66'],
+    ['Comprimento','101','102','103','104','105'],
+  ]};
+  const SG_NOTE = 'Medidas da peça em centímetros, com a peça estendida na mesa. Busto, quadril e cintura são medidos de um lado ao outro. Compare com uma farda que já serve em você.';
+  const SIZE_GUIDE = {
+    'Conjunto Camuflado EB (Gandola + Calça)': { tables: [SG_GANDOLA, SG_CALCA], note: SG_NOTE },
+    'Gandola Camuflada EB': { tables: [SG_GANDOLA], note: SG_NOTE },
+    'Calça Camuflada EB': { tables: [SG_CALCA], note: SG_NOTE },
+    'Bota Tática Protefort': null,
+    'Japona Camuflada EB': null,
+  };
+  const sg = document.getElementById('size-guide');
+  document.querySelectorAll('[data-size-guide]').forEach(b => b.addEventListener('click', () => {
+    const name = b.closest('.product').getAttribute('data-product');
+    const g = SIZE_GUIDE[name];
+    sg.querySelector('.sg__title').textContent = name;
+    const body = sg.querySelector('.sg__body');
+    if (g && g.tables) {
+      body.innerHTML = g.tables.map(t => `<p style="margin:14px 0 4px;color:var(--ink);font-family:var(--f-display);text-transform:uppercase;letter-spacing:1px">${t.title}</p>` +
+        '<div style="overflow-x:auto"><table><thead><tr>' + t.cols.map(c => `<th>${c}</th>`).join('') +
+        '</tr></thead><tbody>' + t.rows.map(r => '<tr>' + r.map((c,i) => i ? `<td>${c}</td>` : `<th>${c}</th>`).join('') + '</tr>').join('') +
+        '</tbody></table></div>').join('') + (g.note ? `<p style="margin-top:14px;font-size:13px">${g.note}</p>` : '');
+    } else {
+      body.textContent = 'Em dúvida entre dois tamanhos? Mande sua altura e peso (ou número do calçado) no WhatsApp que a fábrica indica o tamanho certo antes de você comprar.';
+    }
+    const msg = `Olá! Quero ajuda com o tamanho do produto: ${name}.\nMinha altura: \nMeu peso: ` + origemTxt();
+    sg.querySelector('.sg__wa').href = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(msg)}`;
+    sg.hidden = false;
+  }));
+  sg.querySelectorAll('[data-sg-close]').forEach(el => el.addEventListener('click', () => { sg.hidden = true; }));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') sg.hidden = true; });
 
   // FAQ accordion
   document.querySelectorAll('.faq__item').forEach(item => {
